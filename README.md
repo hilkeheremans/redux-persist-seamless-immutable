@@ -1,4 +1,4 @@
-#redux-persist-seamless-immutable
+# redux-persist-seamless-immutable
 
 This package lets you use `seamless-immutable` on a per-reducer basis along with `redux-persist v5`.
 
