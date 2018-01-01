@@ -16,9 +16,9 @@ Having read the `redux-persist` docs for v5 you already know that it no longer s
 
 You trod on. But, even after using a custom transformer, you then find v5 is consistently throwing you `state.merge is not a function` as soon as any immutable reducer changes state.
 
-`npm i redux-persist-seamless-immutable` or `yarn add redux-persist-seamless-immutable`.
-
 ## Usage
+
+`npm i redux-persist-seamless-immutable` or `yarn add redux-persist-seamless-immutable`.
 
 ### v5
 

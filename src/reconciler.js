@@ -56,6 +56,12 @@ const seamlessImmutableReconciler = (
   return newState;
 };
 
+function isPlainEnoughObject(o) {
+  return (
+    o !== null && !Array.isArray(o) && typeof o === 'object' && !isImmutable(o)
+  );
+}
+
 module.exports = {
   seamlessImmutableReconciler
 };

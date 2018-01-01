@@ -1,8 +1,10 @@
+const { isImmutable } = require('./helpers');
+const { createTransform } = require('redux-persist');
 const Immutable = require('seamless-immutable');
 
 const convertToPojo = state => state.asMutable({ deep: true });
 // optionally convert this object into a JS object if it is Immutable
-const fromImmutable = a => (isImmutable(a) ? convertToJs(a) : a);
+const fromImmutable = a => (isImmutable(a) ? convertToPojo(a) : a);
 // convert this JS object into an Immutable object
 const toImmutable = raw => Immutable(raw);
 
