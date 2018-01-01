@@ -1,0 +1,26 @@
+{
+  "name": "redux-persist-seamless-immutable",
+  "version": "1.0.0",
+  "description": "Use seamless-immutable with redux-persist v5",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "seamless-immutable": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url":
+      "git+https://github.com/hilkeheremans/redux-persist-seamless-immutable.git"
+  },
+  "keywords": ["redux", "persist", "seamless", "immutable", "v5"],
+  "author": "Hilke Heremans",
+  "license": "MIT",
+  "bugs": {
+    "url":
+      "https://github.com/hilkeheremans/redux-persist-seamless-immutable/issues"
+  },
+  "homepage":
+    "https://github.com/hilkeheremans/redux-persist-seamless-immutable#readme"
+}
