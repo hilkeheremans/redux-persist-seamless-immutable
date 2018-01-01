@@ -1,7 +1,5 @@
 #redux-persist-seamless-immutable
 
-> Not yet published!
-
 This package lets you use `seamless-immutable` on a per-reducer basis along with `redux-persist v5`.
 
 Lots of people seem to have trouble with this, so I decided to cobble together a quick fix.
