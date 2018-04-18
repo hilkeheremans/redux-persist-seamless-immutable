@@ -1,5 +1,5 @@
 {
-  "name": "redux-persist-seamless-immutable",
+  "name": "@orangejellyfish/redux-persist-seamless-immutable",
   "version": "1.0.1",
   "description": "Use seamless-immutable with redux-persist v5",
   "main": "lib/index.js",
