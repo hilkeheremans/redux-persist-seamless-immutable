@@ -1,4 +1,4 @@
-const { isImmutable } = require('./helpers');
+const { isImmutable, toImmutable } = require('./helpers');
 
 const seamlessImmutableReconciler = (
   inboundState,
@@ -29,10 +29,15 @@ const seamlessImmutableReconciler = (
         newState[key] = { ...newState[key], ...inboundState[key] };
         return;
       } else if (isImmutable(reducedState[key])) {
-        // if this is a seamless-immutable state slice, use its own merge function
-        newState[key] = newState[key].merge(inboundState[key], {
-          deep: mergeDeep
-        });
+        // if this is a seamless-immutable state slice and object use its own merge function
+        if (isObject(newState[key])) {
+          newState[key] = newState[key].merge(inboundState[key], {
+            deep: mergeDeep
+          });
+        } else {
+          // otherwise use seamless-immutable
+          newState[key] = toImmutable(inboundState[key]);
+        }
         return;
       }
       // otherwise hard set
@@ -55,6 +60,10 @@ const seamlessImmutableReconciler = (
 
   return newState;
 };
+
+function isObject(o) {
+  return o !== null && !Array.isArray(o) && typeof o === 'object';
+}
 
 function isPlainEnoughObject(o) {
   return (
