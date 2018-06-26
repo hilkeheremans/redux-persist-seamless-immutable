@@ -8,7 +8,7 @@ const fromImmutable = a => (isImmutable(a) ? convertToPojo(a) : a);
 // convert this JS object into an Immutable object
 const toImmutable = raw => Immutable(raw);
 
-const seamlessImmutableTransformer = ({ whitelistPerReducer = {}, blacklistPerReducer = {} }) => {
+const seamlessImmutableTransformCreator = ({ whitelistPerReducer = {}, blacklistPerReducer = {} }) => {
   return createTransform(
     // transform state coming from redux on its way to being serialized and stored
     (state, key) => {
@@ -35,5 +35,5 @@ const seamlessImmutableTransformer = ({ whitelistPerReducer = {}, blacklistPerRe
 };
 
 module.exports = {
-  seamlessImmutableTransformer
+  seamlessImmutableTransformCreator
 };

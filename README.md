@@ -4,6 +4,8 @@ This package lets you use `seamless-immutable` on a per-reducer basis along with
 
 Lots of people seem to have trouble with this, so I decided to cobble together a quick fix.
 
+> Update to v2: easy-to-fix breaking change; `seamlessImmutableTransformer` has changed to `seamlessImmutableTransformCreator` to better reflect its new status as a function.
+
 ## Why
 
 > Why is this package for me?
@@ -21,7 +23,7 @@ You trod on. But, even after using a custom transformer, you then find v5 is con
 ### v5
 
 ```
-import { seamlessImmutableReconciler, seamlessImmutableTransformer } from 'redux-persist-seamless-immutable'
+import { seamlessImmutableReconciler, seamlessImmutableTransformCreator } from 'redux-persist-seamless-immutable'
 
 const transformerConfig = {
   whitelistPerReducer: {
@@ -36,12 +38,12 @@ const fooConfig = {
   key: 'foo',
   storage: LocalStorage,
   stateReconciler: seamlessImmutableReconciler,
-  transforms: [seamlessImmutableTransformer(transformerConfig)]
-```
+  transforms: [seamlessImmutableTransformCreator(transformerConfig)]
 }
+```
 
 #### tranformerConfig
-The transformer can accept a config object with the following keys: 
+The transformer can accept a config object with the following keys, which will allow you to white or blacklist specific keys per reducer.
 ```
 {
   whitelistPerReducer: {
