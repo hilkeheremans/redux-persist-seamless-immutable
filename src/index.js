@@ -1,7 +1,7 @@
 const { seamlessImmutableReconciler } = require('./reconciler');
-const { seamlessImmutableTransformer } = require('./transformer');
+const { seamlessImmutableTransformCreator } = require('./transformer');
 
 module.exports = {
   seamlessImmutableReconciler,
-  seamlessImmutableTransformer
+  seamlessImmutableTransformCreator
 };

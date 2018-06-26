@@ -21,13 +21,26 @@ You trod on. But, even after using a custom transformer, you then find v5 is con
 ### v5
 
 ```
-import { seamlessImmutableReconciler, seamlessImmutableTransformer } from 'redux-persist-seamless-immutable'
+import { seamlessImmutableReconciler, seamlessImmutableTransformCreator } from 'redux-persist-seamless-immutable'
 
 const fooConfig = {
   key: 'foo',
   storage: LocalStorage,
   stateReconciler: seamlessImmutableReconciler,
-  transforms: [seamlessImmutableTransformer]
+  transforms: [seamlessImmutableTransformCreator(transformerConfig)]
+}
+```
+
+#### tranformerConfig
+The transformer can accept a config object with the following keys: 
+```
+{
+  whitelistPerReducer: {
+      reducerA: ['keyA', 'keyB']
+  },
+  blacklistPerReducer: {
+      reducerB: ['keyC', 'keyD']
+  }
 }
 ```
 
