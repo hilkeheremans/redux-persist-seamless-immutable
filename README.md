@@ -57,4 +57,4 @@ The transformer can accept a config object with the following keys, which will a
 
 ## Credits
 
-The transformation is based on comments over at `https://github.com/rt2zz/redux-persist/issues/133`. Thanks to @josev55 and @robclouth.
+The transformation is based on comments over at `https://github.com/rt2zz/redux-persist/issues/133`. Thanks to @josev55 and @robclouth. Also kind thanks to @aaronisme and @tasos14 for their contributions!
