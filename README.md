@@ -1,3 +1,5 @@
+> Update: just wanted to let you know it's been busy, but I am still actively using this project and will be converting it to TS (or at least adding some typings) and picking up those issues soon.
+
 # redux-persist-seamless-immutable
 
 This package lets you use `seamless-immutable` on a per-reducer basis along with `redux-persist v5`.
