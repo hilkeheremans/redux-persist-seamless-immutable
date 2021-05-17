@@ -12,6 +12,9 @@ const seamlessImmutableTransformCreator = ({ whitelistPerReducer = {}, blacklist
   return createTransform(
     // transform state coming from redux on its way to being serialized and stored
     (state, key) => {
+      if (!state) {
+        return state
+      }
       const reducedStateKeys = Object.keys(state);
       if (whitelistPerReducer[key]) {
         reducedStateKeys.forEach(item => {
